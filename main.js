@@ -112,6 +112,8 @@ botonOrdenar.addEventListener("click", () => {
 });
 
 // Mediante esta función elegimos la velocidad de ejecución del algoritmo.
+
+
 const velocidadAlgoritmo = () => {
   velocidad = seleccion.value;
   switch (velocidad) {

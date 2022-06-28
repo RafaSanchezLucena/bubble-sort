@@ -1,6 +1,6 @@
 const botonOrdenar = document.querySelector("#boton1");
 const botonDesordenar = document.querySelector("#boton2");
-const seleccion = document.querySelector(".selector")
+const seleccion = document.querySelector(".selector");
 const uno = document.querySelector("#uno");
 const dos = document.querySelector("#dos");
 const tres = document.querySelector("#tres");
@@ -48,8 +48,6 @@ const cubos = [
 let array = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
 ];
-
-let velocidad = 250;
 
 const crearCubos = (array) => {
   // Se asigna a los cubos los valores del array.
@@ -111,10 +109,11 @@ botonOrdenar.addEventListener("click", () => {
   ordenarLista();
 });
 
+// Se asigna el valor de la velocidad de ejecución por defecto.
+let velocidad = 250;
+
 // Mediante esta función elegimos la velocidad de ejecución del algoritmo.
-
-
-const velocidadAlgoritmo = () => {
+seleccion.addEventListener("change", () => {
   velocidad = seleccion.value;
   switch (velocidad) {
     case "muyAlta":
@@ -129,9 +128,4 @@ const velocidadAlgoritmo = () => {
     default:
       velocidad = 500;
   }
-};
-
-
-seleccion.addEventListener("change", (e) => {
-  velocidadAlgoritmo(e.target.value);
-})
+});
